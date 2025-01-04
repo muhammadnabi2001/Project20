@@ -40,7 +40,12 @@ class CategoryController extends Controller
                 'eng' => $validated['eng'],
             ], true),
         ]);
-
         return new CategoryResource($category);
+    }
+    public function delete($id)
+    {
+        $category=Category::findOrFail($id);
+        $category->delete();
+        return response()->json(['success'=>'Category deleted successfully']);
     }
 }

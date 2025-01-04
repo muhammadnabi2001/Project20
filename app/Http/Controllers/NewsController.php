@@ -16,7 +16,7 @@ class NewsController extends Controller
     }
     public function store(NewsRequest $request)
     {
-       // return $request->all();
+        // return $request->all();
         $validated = $request->validated();
         $news = News::create([
             'title' => [
@@ -33,5 +33,31 @@ class NewsController extends Controller
         ]);
 
         return new NewsResource($news);
+    }
+    public function update(NewsRequest $request, $id)
+    {
+        $validated = $request->validated();
+        $news=News::FindOrFail($id);
+        $news->update([
+            'title' => [
+                'uz' => $validated['title_uz'],
+                'ru' => $validated['title_ru'],
+                'eng' => $validated['title_eng'],
+            ],
+            'description' => [
+                'uz' => $validated['description_uz'],
+                'ru' => $validated['description_ru'],
+                'eng' => $validated['description_eng'],
+            ],
+            'category_id' => $validated['category_id'],
+        ]);
+
+        return new NewsResource($news);
+    }
+    public function delete($id)
+    {
+        $new=News::findOrFail($id);
+        $new->delete();
+        return response()->json(['success'=>'News deleted successfully']);
     }
 }
