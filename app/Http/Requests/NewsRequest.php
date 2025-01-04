@@ -22,13 +22,13 @@ class NewsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title.uz' => 'required|string|max:255',
-            'title.ru' => 'required|string|max:255',
-            'title.eng' => 'required|string|max:255',
+            'title_uz' => 'required|string|max:255',
+            'title_ru' => 'required|string|max:255',
+            'title_eng' => 'required|string|max:255',
 
-            'description.uz' => 'required|string',
-            'description.ru' => 'required|string',
-            'description.eng' => 'required|string',
+            'description_uz' => 'required|string',
+            'description_ru' => 'required|string',
+            'description_eng' => 'required|string',
 
             'category_id' => 'required|exists:categories,id',
         ];
@@ -36,12 +36,12 @@ class NewsRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.uz.required' => 'O\'zbekcha sarlavha majburiy',
-            'title.ru.required' => 'Ruscha sarlavha majburiy',
-            'title.eng.required' => 'Inglizcha sarlavha majburiy',
-            'description.uz.required' => 'O\'zbekcha ta\'rif majburiy',
-            'description.ru.required' => 'Ruscha ta\'rif majburiy',
-            'description.eng.required' => 'Inglizcha ta\'rif majburiy',
+            'title_uz.required' => 'O\'zbekcha sarlavha majburiy',
+            'title_ru.required' => 'Ruscha sarlavha majburiy',
+            'title_eng.required' => 'Inglizcha sarlavha majburiy',
+            'description_uz.required' => 'O\'zbekcha ta\'rif majburiy',
+            'description_ru.required' => 'Ruscha ta\'rif majburiy',
+            'description_eng.required' => 'Inglizcha ta\'rif majburiy',
             'category_id.required' => 'Kategoriya tanlanishi shart',
             'category_id.exists' => 'Berilgan kategoriya mavjud emas',
         ];

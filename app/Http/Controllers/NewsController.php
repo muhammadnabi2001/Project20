@@ -11,13 +11,13 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $news=News::all();
+        $news = News::all();
         return NewsResource::collection($news);
     }
     public function store(NewsRequest $request)
     {
+       // return $request->all();
         $validated = $request->validated();
-
         $news = News::create([
             'title' => [
                 'uz' => $validated['title_uz'],

@@ -13,7 +13,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/create',[CategoryController::class,'create']);
     Route::get('/index',[CategoryController::class,'all']);
     Route::post('/updatecategory/{id}',[CategoryController::class,'update']);
-    Route::get('news',[NewsController::class,'index']);
+    Route::get('/news',[NewsController::class,'index']);
+    Route::post('/newscreate',[NewsController::class,'store']);
 
 });
 
