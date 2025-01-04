@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\News;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -33,5 +34,21 @@ class DatabaseSeeder extends Seeder
                 ],true)
             ]);
         }
+        for ($i = 1; $i <= 30; $i++) {
+            News::create([
+                'title' => [
+                    'uz' => 'taytle' . $i,
+                    'eng' => 'title' . $i,
+                    'ru' => 'титле' . $i,
+                ],
+                'description' => [
+                    'uz' => 'deskripshin' . $i,
+                    'eng' => 'description' . $i,
+                    'ru' => 'дескриптион' . $i,
+                ],
+                'category_id' => rand(1, 100),
+            ]);
+        }
+        
     }
 }

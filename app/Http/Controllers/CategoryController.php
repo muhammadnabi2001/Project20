@@ -13,7 +13,7 @@ class CategoryController extends Controller
     {
         $validated = $request->validated();
 
-        $category=Category::create([
+        $category = Category::create([
             'name' => json_encode([
                 'uz' => $validated['uz'],
                 'ru' => $validated['ru'],
@@ -26,5 +26,21 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
         return CategoryResource::collection($categories);
+    }
+    public function update(CategoryRequest $request, $id)
+    {
+        $validated = $request->validated();
+
+        $category = Category::findOrFail($id);
+
+        $category->update([
+            'name' => json_encode([
+                'uz' => $validated['uz'],
+                'ru' => $validated['ru'],
+                'eng' => $validated['eng'],
+            ], true),
+        ]);
+
+        return new CategoryResource($category);
     }
 }
