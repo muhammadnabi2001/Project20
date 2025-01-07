@@ -9,14 +9,10 @@ class LangController extends Controller
 {
     public function index($lang)
     {
-       // dd($lang);
-        if(!in_array($lang,['uz','ru','eng']))
-        {
-            abort(404);
-        }
-        App::setLocale($lang);
-        session()->put('lang',$lang);
-        //dd(session('lang'));
-        return back();
+        session()->put('lang', $lang);
+       // dd(session('lang'));
+    //dd(App::getLocale());
+
+        return redirect()->back();
     }
 }

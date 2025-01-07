@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\NewsRequest;
 use App\Http\Resources\NewsResource;
+use App\Models\Category;
 use App\Models\News;
 use Illuminate\Http\Request;
 
@@ -59,5 +60,18 @@ class NewsController extends Controller
         $new=News::findOrFail($id);
         $new->delete();
         return response()->json(['success'=>'News deleted successfully']);
+    }
+    public function news()
+    {
+        $news = News::orderBy('id', 'desc')->paginate(10);
+        $categories=Category::all();
+        return view('index',['news'=>$news,'categories'=>$categories]);
+    }
+    public function choose(Category $category)
+    {
+        //dd($category);
+        $news = News::orderBy('id', 'desc')->where('category_id',$category->id)->paginate(10);
+        $categories=Category::all();
+        return view('index',['news'=>$news,'categories'=>$categories]);
     }
 }

@@ -3,10 +3,23 @@
 use App\Http\Controllers\CategorybladeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LangController;
+use App\Http\Controllers\NewsBladeController;
+use App\Http\Controllers\NewsController;
+use App\Http\Middleware\Check;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
 //     return view('Categorya.index');
 // });
-Route::get('/',[CategorybladeController::class,'index']);
-Route::get('/lang/{lang}',[LangController::class,'index'])->name('lang');
+Route::middleware([Check::class])->group(function () {
+    Route::get('/index', [CategorybladeController::class, 'index']);
+    Route::post('/category-create',[CategorybladeController::class,'store'])->name('category-create');
+    Route::put('/category-update/{category}',[CategorybladeController::class,'update'])->name('category-update');
+    Route::delete('/category-delete/{category}',[CategorybladeController::class,'delete'])->name('category-delete');
+
+    Route::get('/news',[NewsBladeController::class,'index'])->name('news');
+
+    Route::get('/lang/{lang}', [LangController::class, 'index'])->name('lang');
+    Route::get('/',[NewsController::class,'news']);
+    Route::get('/choose/{category}',[NewsController::class,'choose'])->name('choose');
+});

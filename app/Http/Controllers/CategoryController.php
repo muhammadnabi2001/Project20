@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CategoryRequest;
 use App\Http\Resources\CategoryResource;
 use App\Models\Category;
+use App\Models\News;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -46,6 +47,9 @@ class CategoryController extends Controller
     {
         $category=Category::findOrFail($id);
         $category->delete();
+      
         return response()->json(['success'=>'Category deleted successfully']);
     }
+    
+    
 }

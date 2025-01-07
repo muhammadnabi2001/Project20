@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Muhammadnabi',
             'email' => 'xoliqulovmuhammadnabi842@gmail.com',
         ]);
-        for ($i=1; $i <=100; $i++) { 
+        for ($i=1; $i <=10; $i++) { 
             Category::create([
                 'name'=>json_encode([
                     'uz'=>'Categorya-'.$i,
@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
                     'eng' => 'description' . $i,
                     'ru' => 'дескриптион' . $i,
                 ],
-                'category_id' => rand(1, 100),
+                'category_id' => rand(1, 10),
             ]);
         }
         
