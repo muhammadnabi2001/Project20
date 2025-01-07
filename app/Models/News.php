@@ -15,4 +15,8 @@ class News extends Model
         'title'=>'array',
         'description'=>'array'
     ];
+    public function category()
+    {
+        return $this->belongsTo(Category::class,'category_id');
+    }
 }

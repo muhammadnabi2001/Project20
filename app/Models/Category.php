@@ -12,4 +12,8 @@ class Category extends Model
     protected $casts=[
         'name'=>'array'
     ];
+    public function news()
+    {
+        return $this->hasMany(News::class,'category_id');
+    }
 }

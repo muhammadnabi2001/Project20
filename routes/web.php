@@ -18,6 +18,8 @@ Route::middleware([Check::class])->group(function () {
     Route::delete('/category-delete/{category}',[CategorybladeController::class,'delete'])->name('category-delete');
 
     Route::get('/news',[NewsBladeController::class,'index'])->name('news');
+    Route::post('/news-create',[NewsBladeController::class,'store'])->name('news-create');
+    Route::put('/news-update/{new}',[NewsBladeController::class,'update'])->name('news-update');
 
     Route::get('/lang/{lang}', [LangController::class, 'index'])->name('lang');
     Route::get('/',[NewsController::class,'news']);
