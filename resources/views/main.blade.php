@@ -65,6 +65,16 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>{{__('menyu.news')}}</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>{{__('menyu.user')}}</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/sendmessage">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>{{__('menyu.sendmessage')}}</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

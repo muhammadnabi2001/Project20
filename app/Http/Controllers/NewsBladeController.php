@@ -54,4 +54,10 @@ class NewsBladeController extends Controller
         ]);
         return back();
     }
+    public function delete(News $new)
+    {
+        //dd($new);
+        $new->delete();
+        return back();
+    }
 }

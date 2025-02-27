@@ -2,6 +2,8 @@
 return [
     'dashbord'=>'dashbord',
     'category'=>'Kategorya',
-    'news'=>'Yangiliklar'
+    'news'=>'Yangiliklar',
+    'user'=>'foydalanuvchilar',
+    'sendmessage'=>'Xabarlar'
 ]
 ?>

@@ -2,6 +2,9 @@
 return [
     'dashbord'=>'дашборд',
     'category'=>'Сатегорй',
-    'news'=>'Новсты'
+    'news'=>'Новсты',
+    'user'=>'пользователи',
+    'sendmessage'=>'Messages'
+
 ]
 ?>

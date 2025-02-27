@@ -13,7 +13,7 @@ class CategorybladeController extends Controller
 {
     public function index()
     {
-        $categories=Category::all();
+        $categories=Category::orderBy('id','desc')->paginate(10);
         return view('Categorya.index',['categories'=>$categories]);
     }
     public function store(CategoryStoreRequest $request)

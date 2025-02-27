@@ -121,7 +121,7 @@
                                     @foreach ($news as $new)
                                         <tr>
 
-                                            <td>{{ $new->id }}</td>
+                                            <td>{{ $news->perPage() * ($news->currentPage() - 1) + $loop->iteration }}</td> 
                                             <td>{{ $new->title[$lang] }}</td>
                                             <td>{{ $new->description[$lang] }}</td>
                                             <td>{{ $new->created_at->format('Y-m-d') }}</td>
@@ -249,7 +249,7 @@
                                                     </div>
                                                 </div>
 
-                                                <form action={{ route('category-delete', $new->id) }} method="POST"
+                                                <form action={{ route('news-delete', $new->id) }} method="POST"
                                                     style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')
@@ -261,6 +261,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        {{ $news->links() }}
                     </div>
                 </div>
             </div>
