@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategorybladeController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\GreatController;
 use App\Http\Controllers\LangController;
 use App\Http\Controllers\NewsBladeController;
 use App\Http\Controllers\NewsController;
@@ -34,5 +35,6 @@ Route::middleware([Check::class])->group(function () {
     Route::get('/choose/{category}',[NewsController::class,'choose'])->name('choose');
     Route::get('/sendmessage',[SendMessageController::class,'index'])->name('sendmessage');
     Route::post('/store',[SendMessageController::class,'send'])->name('messages.store');
+    Route::get('/great',[GreatController::class,'index'])->name('great');
 
 });

@@ -76,7 +76,7 @@
                     <span>{{__('menyu.sendmessage')}}</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/sendmessage">
+                <a class="nav-link" href="/great">
                     <i class="fas fa-fw fa-table"></i>
                     <span>{{__('menyu.great')}}</span></a>
             </li>
