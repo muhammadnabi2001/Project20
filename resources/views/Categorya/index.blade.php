@@ -58,7 +58,7 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Category Name</th>
+                                        <th>Category Name123</th>
                                         <th>Created At</th>
                                         <th>Actions</th>
                                     </tr>
