@@ -4,7 +4,8 @@ return [
     'category'=>'Сатегорй',
     'news'=>'Новсты',
     'user'=>'пользователи',
-    'sendmessage'=>'Messages'
+    'sendmessage'=>'Messages',
+    'great'=>'Greate',
 
 ]
 ?>

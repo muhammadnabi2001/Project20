@@ -4,6 +4,7 @@ return [
     'category'=>'Kategorya',
     'news'=>'Yangiliklar',
     'user'=>'foydalanuvchilar',
-    'sendmessage'=>'Xabarlar'
+    'sendmessage'=>'Xabarlar',
+    'great'=>'Ajoyib'
 ]
 ?>

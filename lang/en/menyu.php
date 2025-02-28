@@ -4,7 +4,8 @@ return [
     'category'=>'Category',
     'news'=>'news',
     'user'=>'users',
-    'sendmessage'=>"Messages"
+    'sendmessage'=>"Messages",
+    'great'=>"Great"
     
 ]
 ?>
