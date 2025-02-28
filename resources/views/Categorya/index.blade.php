@@ -58,6 +58,7 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
+                                        <th>Category Name</th>
                                         <th>Created At</th>
                                         <th>Actions</th>
                                     </tr>
