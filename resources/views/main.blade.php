@@ -78,7 +78,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/sendmessage">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>{{__('menyu.sendmessage')}}</span></a>
+                    <span>{{__('menyu.great')}}</span></a>
             </li>
 
             <!-- Divider -->
