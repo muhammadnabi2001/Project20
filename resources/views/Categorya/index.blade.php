@@ -3,7 +3,6 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <!-- Modal Trigger Button -->
             <div class="col-12">
 
                 <button class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#createCategoryModal">Create</button>
